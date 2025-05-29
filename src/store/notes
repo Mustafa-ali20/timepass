@@ -1,0 +1,50 @@
+Cannot perform async action in counterSlice 
+u need to make rapper you can write it below the counter slice code 
+
+normal code with async
+1st redux learnings
+import { useSelector, useDispatch } from "react-redux";
+import {
+  decrement,
+  increment,
+  incrementAsync,
+  incrementByAmount,
+} from "./store/reducers/counterSlice";
+
+const App = () => {
+  const { value } = useSelector((state) => state.counter);
+  const dispatch = useDispatch();
+
+  return (
+    <div className="h-screen w-full bg-zinc-700">
+      <div className="m-auto cointainer pt-10 flex justify-center ">
+        <h1 className="text center font-bold  text-3xl text-white">
+          Counter: {value}
+        </h1>
+      </div>
+
+      <div className="text-center">
+        <button
+          onClick={() => dispatch(increment())}
+          className="border-1 rounded bg-transparent p-4 mt-5 mr-2 font-semibold text-white"
+        >
+          Increase Count
+        </button>
+        <button
+          onClick={() => dispatch(decrement(2))}
+          className="border-1 rounded bg-transparent p-4 mt-5 mr-2 font-semibold text-white"
+        >
+          Decrease Count
+        </button>
+        <button
+          onClick={() => dispatch(incrementAsync(5))}
+          className="border-1 rounded bg-transparent p-4 mt-5 font-semibold text-white"
+        >
+          Increase Count by 5
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default App;
