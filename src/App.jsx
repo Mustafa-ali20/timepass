@@ -1,23 +1,26 @@
 import React from "react";
-
-import { useSelector } from "react-redux";
+import { Link, Route, Routes } from "react-router-dom";
 
 const App = () => {
-  const {users} = useSelector((state) => state.UserReducer);
-
   return (
-    <div className=" bg-zinc-800 h-screen w-full p-10 flex">
-      <h1 className="text-2xl font-bold text-white">
-        Users List
-        {users.map((user, i) => (
-          <div key={i}>
-            <h1 className="text-xl font-normal text-zinc-400">{user.name}</h1>
-          </div>
-        ))}
-      </h1>
+    <div className="w-screen h-screen bg-zinc-700  ">
+      <nav className="pt-5 text-white flex justify-center gap-10 font-semibold">
+        <Link to="/">Home</Link>
+        <Link to="/users">Users</Link>
+        <Link to="/products">Products</Link>
+      </nav>
+      <hr className="mt-7 bg-zinc-100"/>
+    
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/users" element={<Users />} />
+      <Route path="/products" element={<Products />} />
+    </Routes>
+    
+    
+    
     </div>
   );
 };
 
 export default App;
-

@@ -240,8 +240,11 @@ export const UserSlice = createSlice({
   name: "users",
   initialState,
   reducers: {
-    //actions
+    userdelete: (state, action) => {
+      state.users.splice(action.payload, 1);
+    },
   },
 });
 
 export default UserSlice.reducer;
+export const { userdelete } = UserSlice.actions;
