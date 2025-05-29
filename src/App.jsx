@@ -1,5 +1,8 @@
 import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import Users from "./components/Users";
+import Products from "./components/Products";
 
 const App = () => {
   return (
