@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { userdelete } from "../store/reducers/ProductReducer";
+import { userdelete } from "../store/reducers/UserReducer";
 
 const Users = () => {
   const { users } = useSelector((state) => state.UserReducer);
@@ -22,7 +22,7 @@ const Users = () => {
               {user.name}
               <span
                 onClick={() => DeleteHandler(i)}
-                className="text-zinc-200 cursor-pointer ml-2"
+                className="text-zinc-200 cursor-pointer ml-3 "
               >
                 X
               </span>
